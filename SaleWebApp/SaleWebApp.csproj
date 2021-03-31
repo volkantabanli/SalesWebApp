@@ -1,0 +1,682 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5485EF52-BDFD-4C60-87E9-8CFB0C2A9751}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SaleWebApp</RootNamespace>
+    <AssemblyName>SaleWebApp</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminContext.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\CategoriesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
+    <Compile Include="Category.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\css\dore.dark.bluenavy.css" />
+    <Content Include="Assets\css\dore.dark.bluenavy.min.css" />
+    <Content Include="Assets\css\dore.dark.blueolympic.css" />
+    <Content Include="Assets\css\dore.dark.blueolympic.min.css" />
+    <Content Include="Assets\css\dore.dark.blueyale.css" />
+    <Content Include="Assets\css\dore.dark.blueyale.min.css" />
+    <Content Include="Assets\css\dore.dark.greenlime.css" />
+    <Content Include="Assets\css\dore.dark.greenlime.min.css" />
+    <Content Include="Assets\css\dore.dark.greenmoss.css" />
+    <Content Include="Assets\css\dore.dark.greenmoss.min.css" />
+    <Content Include="Assets\css\dore.dark.greysteel.css" />
+    <Content Include="Assets\css\dore.dark.greysteel.min.css" />
+    <Content Include="Assets\css\dore.dark.orangecarrot.css" />
+    <Content Include="Assets\css\dore.dark.orangecarrot.min.css" />
+    <Content Include="Assets\css\dore.dark.purplemonster.css" />
+    <Content Include="Assets\css\dore.dark.purplemonster.min.css" />
+    <Content Include="Assets\css\dore.dark.redruby.css" />
+    <Content Include="Assets\css\dore.dark.redruby.min.css" />
+    <Content Include="Assets\css\dore.dark.yellowgranola.css" />
+    <Content Include="Assets\css\dore.dark.yellowgranola.min.css" />
+    <Content Include="Assets\css\dore.light.bluenavy.css" />
+    <Content Include="Assets\css\dore.light.bluenavy.min.css" />
+    <Content Include="Assets\css\dore.light.blueolympic.css" />
+    <Content Include="Assets\css\dore.light.blueolympic.min.css" />
+    <Content Include="Assets\css\dore.light.blueyale.css" />
+    <Content Include="Assets\css\dore.light.blueyale.min.css" />
+    <Content Include="Assets\css\dore.light.greenlime.css" />
+    <Content Include="Assets\css\dore.light.greenlime.min.css" />
+    <Content Include="Assets\css\dore.light.greenmoss.css" />
+    <Content Include="Assets\css\dore.light.greenmoss.min.css" />
+    <Content Include="Assets\css\dore.light.greysteel.css" />
+    <Content Include="Assets\css\dore.light.greysteel.min.css" />
+    <Content Include="Assets\css\dore.light.orangecarrot.css" />
+    <Content Include="Assets\css\dore.light.orangecarrot.min.css" />
+    <Content Include="Assets\css\dore.light.purplemonster.css" />
+    <Content Include="Assets\css\dore.light.purplemonster.min.css" />
+    <Content Include="Assets\css\dore.light.redruby.css" />
+    <Content Include="Assets\css\dore.light.redruby.min.css" />
+    <Content Include="Assets\css\dore.light.yellowgranola.css" />
+    <Content Include="Assets\css\dore.light.yellowgranola.min.css" />
+    <Content Include="Assets\css\main.css" />
+    <Content Include="Assets\css\vendor\baguetteBox.min.css" />
+    <Content Include="Assets\css\vendor\bootstrap-datepicker3.min.css" />
+    <Content Include="Assets\css\vendor\bootstrap-float-label.min.css" />
+    <Content Include="Assets\css\vendor\bootstrap-stars.css" />
+    <Content Include="Assets\css\vendor\bootstrap-tagsinput.css" />
+    <Content Include="Assets\css\vendor\bootstrap.min.css" />
+    <Content Include="Assets\css\vendor\bootstrap.rtl.only.min.css" />
+    <Content Include="Assets\css\vendor\component-custom-switch.min.css" />
+    <Content Include="Assets\css\vendor\cropper.min.css" />
+    <Content Include="Assets\css\vendor\dataTables.bootstrap4.min.css" />
+    <Content Include="Assets\css\vendor\datatables.responsive.bootstrap4.min.css" />
+    <Content Include="Assets\css\vendor\dropzone.min.css" />
+    <Content Include="Assets\css\vendor\fullcalendar.min.css" />
+    <Content Include="Assets\css\vendor\glide.core.min.css" />
+    <Content Include="Assets\css\vendor\jquery.contextMenu.min.css" />
+    <Content Include="Assets\css\vendor\jquery.dataTables.min.css" />
+    <Content Include="Assets\css\vendor\nouislider.min.css" />
+    <Content Include="Assets\css\vendor\owl.carousel.min.css" />
+    <Content Include="Assets\css\vendor\perfect-scrollbar.css" />
+    <Content Include="Assets\css\vendor\quill.bubble.css" />
+    <Content Include="Assets\css\vendor\quill.snow.css" />
+    <Content Include="Assets\css\vendor\select2-bootstrap.min.css" />
+    <Content Include="Assets\css\vendor\select2.min.css" />
+    <Content Include="Assets\css\vendor\slick.css" />
+    <Content Include="Assets\css\vendor\smart_wizard.min.css" />
+    <Content Include="Assets\css\vendor\video-js.css" />
+    <Content Include="Assets\font\iconsmind-s\css\animation.css" />
+    <Content Include="Assets\font\iconsmind-s\css\iconsminds-codes.css" />
+    <Content Include="Assets\font\iconsmind-s\css\iconsminds-embedded.css" />
+    <Content Include="Assets\font\iconsmind-s\css\iconsminds-ie7-codes.css" />
+    <Content Include="Assets\font\iconsmind-s\css\iconsminds-ie7.css" />
+    <Content Include="Assets\font\iconsmind-s\css\iconsminds.css" />
+    <Content Include="Assets\font\iconsmind-s\demo.html" />
+    <Content Include="Assets\font\iconsmind-s\font\iconsminds.svg" />
+    <Content Include="Assets\font\iconsmind-s\README.txt" />
+    <Content Include="Assets\font\simple-line-icons\css\simple-line-icons.css" />
+    <Content Include="Assets\font\simple-line-icons\fonts\Simple-Line-Icons.svg" />
+    <Content Include="Assets\img\cards\thumb-1.jpg" />
+    <Content Include="Assets\img\cards\thumb-2.jpg" />
+    <Content Include="Assets\img\cards\thumb-3.jpg" />
+    <Content Include="Assets\img\cards\thumb-4.jpg" />
+    <Content Include="Assets\img\carousels\1.jpg" />
+    <Content Include="Assets\img\carousels\2.jpg" />
+    <Content Include="Assets\img\carousels\3.jpg" />
+    <Content Include="Assets\img\carousels\thumb-1.jpg" />
+    <Content Include="Assets\img\carousels\thumb-2.jpg" />
+    <Content Include="Assets\img\carousels\thumb-3.jpg" />
+    <Content Include="Assets\img\carousels\thumb-4.jpg" />
+    <Content Include="Assets\img\details\1.jpg" />
+    <Content Include="Assets\img\details\2.jpg" />
+    <Content Include="Assets\img\details\3.jpg" />
+    <Content Include="Assets\img\details\4.jpg" />
+    <Content Include="Assets\img\details\5.jpg" />
+    <Content Include="Assets\img\details\small-1.jpg" />
+    <Content Include="Assets\img\details\small-2.jpg" />
+    <Content Include="Assets\img\details\small-3.jpg" />
+    <Content Include="Assets\img\details\small-4.jpg" />
+    <Content Include="Assets\img\details\small-5.jpg" />
+    <Content Include="Assets\img\details\small-6.jpg" />
+    <Content Include="Assets\img\details\small-7.jpg" />
+    <Content Include="Assets\img\details\small-8.jpg" />
+    <Content Include="Assets\img\landing-page\applications\chat.jpg" />
+    <Content Include="Assets\img\landing-page\applications\library.jpg" />
+    <Content Include="Assets\img\landing-page\applications\survey.jpg" />
+    <Content Include="Assets\img\landing-page\applications\todo.jpg" />
+    <Content Include="Assets\img\landing-page\components.jpg" />
+    <Content Include="Assets\img\landing-page\features\extra-responsive.png" />
+    <Content Include="Assets\img\landing-page\features\layouts-for-the-job.png" />
+    <Content Include="Assets\img\landing-page\features\plesant-design.png" />
+    <Content Include="Assets\img\landing-page\features\smart-menu.png" />
+    <Content Include="Assets\img\landing-page\features\superfine-charts.png" />
+    <Content Include="Assets\img\landing-page\home-hero-mobile.png" />
+    <Content Include="Assets\img\landing-page\home-hero.png" />
+    <Content Include="Assets\img\landing-page\layouts\authentication.jpg" />
+    <Content Include="Assets\img\landing-page\layouts\data-list-app-menu-hidden.jpg" />
+    <Content Include="Assets\img\landing-page\layouts\data-list.jpg" />
+    <Content Include="Assets\img\landing-page\layouts\details.jpg" />
+    <Content Include="Assets\img\landing-page\layouts\image-list.jpg" />
+    <Content Include="Assets\img\landing-page\layouts\menu-default.jpg" />
+    <Content Include="Assets\img\landing-page\layouts\menu-hidden.jpg" />
+    <Content Include="Assets\img\landing-page\layouts\menu-subhidden.jpg" />
+    <Content Include="Assets\img\landing-page\layouts\search-result.jpg" />
+    <Content Include="Assets\img\landing-page\layouts\spa.jpg" />
+    <Content Include="Assets\img\landing-page\layouts\tabs.jpg" />
+    <Content Include="Assets\img\landing-page\layouts\thumb-list.jpg" />
+    <Content Include="Assets\img\login\balloon-lg.jpg" />
+    <Content Include="Assets\img\login\balloon.jpg" />
+    <Content Include="Assets\img\login\plane.jpg" />
+    <Content Include="Assets\img\notifications\1.jpg" />
+    <Content Include="Assets\img\notifications\2.jpg" />
+    <Content Include="Assets\img\notifications\3.jpg" />
+    <Content Include="Assets\img\products\bebinca-thumb.jpg" />
+    <Content Include="Assets\img\products\cheesecake-thumb.jpg" />
+    <Content Include="Assets\img\products\chocolate-cake-thumb.jpg" />
+    <Content Include="Assets\img\products\coconut-cake.jpg" />
+    <Content Include="Assets\img\products\cremeschnitte-thumb.jpg" />
+    <Content Include="Assets\img\products\fat-rascal-thumb.jpg" />
+    <Content Include="Assets\img\products\financier-thumb.jpg" />
+    <Content Include="Assets\img\products\fruitcake-thumb.jpg" />
+    <Content Include="Assets\img\products\fruitcake.jpg" />
+    <Content Include="Assets\img\products\genoise-thumb.jpg" />
+    <Content Include="Assets\img\products\gingerbread-thumb.jpg" />
+    <Content Include="Assets\img\products\goose-breast-thumb.jpg" />
+    <Content Include="Assets\img\products\magdalena-thumb.jpg" />
+    <Content Include="Assets\img\products\magdalena.jpg" />
+    <Content Include="Assets\img\products\marble-cake-thumb.jpg" />
+    <Content Include="Assets\img\products\marble-cake.jpg" />
+    <Content Include="Assets\img\products\merveilleux-thumb.jpg" />
+    <Content Include="Assets\img\products\napoleonshat-thumb.jpg" />
+    <Content Include="Assets\img\products\napoleonshat.jpg" />
+    <Content Include="Assets\img\products\parkin-thumb.jpg" />
+    <Content Include="Assets\img\products\parkin.jpg" />
+    <Content Include="Assets\img\products\petit-gateau-thumb.jpg" />
+    <Content Include="Assets\img\products\salzburger-nockerl-thumb.jpg" />
+    <Content Include="Assets\img\products\souffle-thumb.jpg" />
+    <Content Include="Assets\img\products\streuselkuchen-thumb.jpg" />
+    <Content Include="Assets\img\products\tea-loaf-thumb.jpg" />
+    <Content Include="Assets\img\products\tea-loaf.jpg" />
+    <Content Include="Assets\img\profiles\1.jpg" />
+    <Content Include="Assets\img\profiles\l-1.jpg" />
+    <Content Include="Assets\img\profiles\l-10.jpg" />
+    <Content Include="Assets\img\profiles\l-11.jpg" />
+    <Content Include="Assets\img\profiles\l-2.jpg" />
+    <Content Include="Assets\img\profiles\l-3.jpg" />
+    <Content Include="Assets\img\profiles\l-4.jpg" />
+    <Content Include="Assets\img\profiles\l-5.jpg" />
+    <Content Include="Assets\img\profiles\l-6.jpg" />
+    <Content Include="Assets\img\profiles\l-7.jpg" />
+    <Content Include="Assets\img\profiles\l-8.jpg" />
+    <Content Include="Assets\img\profiles\l-9.jpg" />
+    <Content Include="Assets\img\social\header.jpg" />
+    <Content Include="Assets\img\video\big-buck-bunny-poster.jpg" />
+    <Content Include="Assets\img\video\subpage-video-poster.jpg" />
+    <Content Include="Assets\js\dore-plugins\select.from.library.js" />
+    <Content Include="Assets\js\dore.script.js" />
+    <Content Include="Assets\js\dore.scripts.landingpage.js" />
+    <Content Include="Assets\js\scripts.js" />
+    <Content Include="Assets\js\scripts.single.theme.js" />
+    <Content Include="Assets\js\vendor\baguetteBox.min.js" />
+    <Content Include="Assets\js\vendor\bootstrap-datepicker.js" />
+    <Content Include="Assets\js\vendor\bootstrap-notify.min.js" />
+    <Content Include="Assets\js\vendor\bootstrap-tagsinput.min.js" />
+    <Content Include="Assets\js\vendor\bootstrap.bundle.min.js" />
+    <Content Include="Assets\js\vendor\Chart.bundle.min.js" />
+    <Content Include="Assets\js\vendor\chartjs-plugin-datalabels.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\ckeditor.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\ar.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\ast.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\bg.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\ca.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\cs.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\da.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\de.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\el.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\en-au.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\eo.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\es.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\et.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\eu.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\fa.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\fi.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\fr.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\gl.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\gu.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\hr.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\hu.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\it.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\ja.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\km.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\kn.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\ko.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\ku.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\nb.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\ne.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\nl.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\no.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\oc.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\pl.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\pt-br.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\pt.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\ro.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\ru.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\si.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\sk.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\sq.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\sv.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\tr.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\tt.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\ug.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\uk.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\zh-cn.js" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\translations\zh.js" />
+    <Content Include="Assets\js\vendor\countdown.min.js" />
+    <Content Include="Assets\js\vendor\cropper.min.js" />
+    <Content Include="Assets\js\vendor\datatables.min.js" />
+    <Content Include="Assets\js\vendor\dropzone.min.js" />
+    <Content Include="Assets\js\vendor\fullcalendar.min.js" />
+    <Content Include="Assets\js\vendor\glide.min.js" />
+    <Content Include="Assets\js\vendor\jquery-3.3.1.min.js" />
+    <Content Include="Assets\js\vendor\jquery.autoellipsis.js" />
+    <Content Include="Assets\js\vendor\jquery.barrating.min.js" />
+    <Content Include="Assets\js\vendor\jquery.contextMenu.min.js" />
+    <Content Include="Assets\js\vendor\jquery.smartWizard.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\additional-methods.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\additional-methods.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\jquery.validate.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\jquery.validate.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_ar.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_ar.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_az.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_az.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_bg.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_bg.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_bn_BD.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_bn_BD.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_ca.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_ca.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_cs.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_cs.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_da.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_da.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_de.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_de.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_el.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_el.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_es.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_es.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_es_AR.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_es_AR.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_es_PE.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_es_PE.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_et.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_et.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_eu.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_eu.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_fa.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_fa.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_fi.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_fi.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_fr.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_fr.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_ge.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_ge.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_gl.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_gl.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_he.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_he.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_hr.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_hr.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_hu.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_hu.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_hy_AM.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_hy_AM.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_id.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_id.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_is.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_is.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_it.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_it.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_ja.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_ja.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_ka.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_ka.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_kk.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_kk.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_ko.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_ko.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_lt.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_lt.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_lv.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_lv.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_mk.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_mk.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_my.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_my.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_nl.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_nl.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_no.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_no.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_pl.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_pl.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_pt_BR.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_pt_BR.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_pt_PT.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_pt_PT.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_ro.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_ro.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_ru.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_ru.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_sd.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_sd.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_si.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_si.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_sk.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_sk.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_sl.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_sl.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_sr.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_sr.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_sr_lat.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_sr_lat.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_sv.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_sv.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_th.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_th.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_tj.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_tj.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_tr.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_tr.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_uk.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_uk.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_ur.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_ur.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_vi.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_vi.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_zh.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_zh.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_zh_TW.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\messages_zh_TW.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\methods_de.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\methods_de.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\methods_es_CL.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\methods_es_CL.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\methods_fi.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\methods_fi.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\methods_it.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\methods_it.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\methods_nl.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\methods_nl.min.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\methods_pt.js" />
+    <Content Include="Assets\js\vendor\jquery.validate\localization\methods_pt.min.js" />
+    <Content Include="Assets\js\vendor\landing-page\headroom.min.js" />
+    <Content Include="Assets\js\vendor\landing-page\jquery.autoellipsis.js" />
+    <Content Include="Assets\js\vendor\landing-page\jQuery.headroom.js" />
+    <Content Include="Assets\js\vendor\landing-page\jquery.scrollTo.min.js" />
+    <Content Include="Assets\js\vendor\moment.min.js" />
+    <Content Include="Assets\js\vendor\mousetrap.js" />
+    <Content Include="Assets\js\vendor\mousetrap.min.js" />
+    <Content Include="Assets\js\vendor\nouislider.min.js" />
+    <Content Include="Assets\js\vendor\owl.carousel.min.js" />
+    <Content Include="Assets\js\vendor\perfect-scrollbar.min.js" />
+    <Content Include="Assets\js\vendor\progressbar.min.js" />
+    <Content Include="Assets\js\vendor\quill.min.js" />
+    <Content Include="Assets\js\vendor\select2.full.js" />
+    <Content Include="Assets\js\vendor\slick.min.js" />
+    <Content Include="Assets\js\vendor\Sortable.js" />
+    <Content Include="Assets\js\vendor\typeahead.bundle.js" />
+    <Content Include="Assets\js\vendor\video.js" />
+    <Content Include="Assets\js\vendor\videojs-youtube.min.js" />
+    <Content Include="Assets\logos\black.svg" />
+    <Content Include="Assets\logos\mobile.svg" />
+    <Content Include="Assets\logos\white-full.svg" />
+    <Content Include="Assets\logos\white.svg" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Assets\css\sass\themes\dore.dark.bluenavy.scss" />
+    <Content Include="Assets\css\sass\themes\dore.dark.blueolympic.scss" />
+    <Content Include="Assets\css\sass\themes\dore.dark.blueyale.scss" />
+    <Content Include="Assets\css\sass\themes\dore.dark.greenlime.scss" />
+    <Content Include="Assets\css\sass\themes\dore.dark.greenmoss.scss" />
+    <Content Include="Assets\css\sass\themes\dore.dark.greysteel.scss" />
+    <Content Include="Assets\css\sass\themes\dore.dark.orangecarrot.scss" />
+    <Content Include="Assets\css\sass\themes\dore.dark.purplemonster.scss" />
+    <Content Include="Assets\css\sass\themes\dore.dark.redruby.scss" />
+    <Content Include="Assets\css\sass\themes\dore.dark.yellowgranola.scss" />
+    <Content Include="Assets\css\sass\themes\dore.light.bluenavy.scss" />
+    <Content Include="Assets\css\sass\themes\dore.light.blueolympic.scss" />
+    <Content Include="Assets\css\sass\themes\dore.light.blueyale.scss" />
+    <Content Include="Assets\css\sass\themes\dore.light.greenlime.scss" />
+    <Content Include="Assets\css\sass\themes\dore.light.greenmoss.scss" />
+    <Content Include="Assets\css\sass\themes\dore.light.greysteel.scss" />
+    <Content Include="Assets\css\sass\themes\dore.light.orangecarrot.scss" />
+    <Content Include="Assets\css\sass\themes\dore.light.purplemonster.scss" />
+    <Content Include="Assets\css\sass\themes\dore.light.redruby.scss" />
+    <Content Include="Assets\css\sass\themes\dore.light.yellowgranola.scss" />
+    <Content Include="Assets\css\sass\_dore.style.scss" />
+    <Content Include="Assets\css\sass\_mixins.scss" />
+    <Content Include="Assets\font\iconsmind-s\config.json" />
+    <Content Include="Assets\font\iconsmind-s\font\iconsminds.eot" />
+    <Content Include="Assets\font\iconsmind-s\font\iconsminds.ttf" />
+    <Content Include="Assets\font\iconsmind-s\font\iconsminds.woff" />
+    <Content Include="Assets\font\iconsmind-s\font\iconsminds.woff2" />
+    <Content Include="Assets\font\simple-line-icons\fonts\Simple-Line-Icons.eot" />
+    <Content Include="Assets\font\simple-line-icons\fonts\Simple-Line-Icons.ttf" />
+    <Content Include="Assets\font\simple-line-icons\fonts\Simple-Line-Icons.woff" />
+    <Content Include="Assets\font\simple-line-icons\fonts\Simple-Line-Icons.woff2" />
+    <Content Include="Assets\font\simple-line-icons\LICENSE.md" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\ckeditor.js.map" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\LICENSE.md" />
+    <Content Include="Assets\js\vendor\ckeditor5-build-classic\README.md" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_Admin.cshtml" />
+    <Content Include="Areas\Admin\Views\Categories\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Categories\New.cshtml" />
+    <Content Include="Areas\Admin\Views\Categories\View.cshtml" />
+    <Content Include="Areas\Admin\Views\Categories\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\New.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\View.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Edit.cshtml" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Corparate.cshtml" />
+    <Content Include="Views\Home\Gonder.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\UploadedFiles\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61019</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:61019/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

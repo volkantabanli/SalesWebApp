@@ -1,0 +1,69 @@
+﻿@model  List<Category>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Admin.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h1>Duyurular</h1>
+            <br />
+            <a class="btn btn-primary mb-3" href="/admin/categories/new">Yeni</a>
+            <div class="card">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Başlık</th>
+                            <th>Açıklama</th>      
+                            <th>#</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            int i = 1;
+                        }
+                        @foreach (Category categories in Model)
+                        {
+                        <tr>
+                            <td>@i</td>
+                            <td>
+                                <p class="list-item-heading">@categories.Name</p>
+                            </td>
+                            <td>
+                                <p class="text-muted">@categories.Color</p>
+                            </td>
+                            <td>
+                                <p class="text-muted">@categories.IsActive</p>
+                            </td>
+                            <td>
+                                <a class="btn btn-secondary" href="/admin/categories/view/@categories.Id">Görüntüle</a>
+                                &nbsp;|&nbsp;
+                                <a class="btn btn-warning" href="/admin/categories/edit/@categories.Id">Düzenle</a>
+                                &nbsp;|&nbsp;
+                                @if (categories.IsActive)
+                                {
+                                    <a class="btn btn-info" href="/admin/categories/archive/@categories.Id">Arşivle</a>
+                                }
+                                else
+                                {
+                                    <a class="btn btn-info" href="/admin/categories/activate/@categories.Id">Aktifleştir</a>
+                                }
+                                &nbsp;|&nbsp;
+                                <form method="post" action="/admin/categories/delete" style="display:inline">
+                                    <input type="hidden" name="Id" value="@categories.Id" />
+                                    <input type="submit" class="btn btn-danger" value="Sil" />
+                                </form>
+                            </td>
+                        </tr>
+                            i++;
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+

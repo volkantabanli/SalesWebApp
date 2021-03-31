@@ -1,0 +1,89 @@
+﻿@model Product
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Areas/Admin/Views/Shared/_Admin.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h1>Ürünleri Görüntüle</h1>
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Image</label>
+                        <div class="col-sm-10">
+                          <img src="~/Areas/UploadedFiles/@Model.Image" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Name</label>
+                        <div class="col-sm-10">
+                            @Model.Name
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Description</label>
+                        <div class="col-sm-10">
+                            @Model.Description
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">UnitsInStock</label>
+                        <div class="col-sm-10">
+                            @Model.UnitsInStock
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">UnitPrice</label>
+                        <div class="col-sm-10">
+                            @Model.UnitPrice
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">SalePrice</label>
+                        <div class="col-sm-10">
+                            @Model.SalePrice
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">CategoryNo</label>
+                        <div class="col-sm-10">
+                            @Model.CategoryNo
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">IsActive</label>
+                        <div class="col-sm-10">
+                            @Model.IsActive
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-10">
+                            <a class="btn btn-dark" href="/admin/products" style="float:left">İptal</a>
+
+                            &nbsp;|&nbsp;
+                            <a class="btn btn-warning" href="/admin/products/edit/@Model.Id">Düzenle</a>
+                            &nbsp;|&nbsp;
+                            @if (@Model.IsActive)
+                            {
+                                <a class="btn btn-info" href="/admin/products/archive/@Model.Id">Arşivle</a>
+                            }
+                            else
+                            {
+                                <a class="btn btn-info" href="/admin/products/activate/@Model.Id">Aktifleştir</a>
+                            }
+                            &nbsp;|&nbsp;
+                            <form method="post" action="/admin/products/delete" style="display:inline">
+                                <input type="hidden" name="Id" value="@Model.Id" />
+                                <input type="submit" class="btn btn-danger" value="Sil" />
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+
